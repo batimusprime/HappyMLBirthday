@@ -14,6 +14,6 @@ soup = bs.BeautifulSoup(url, 'lxml')
 print(soup.title.text)
 sd = soup.find_all('td', class_='left')
 for diego in sd:
-    td = str(diego.find('a'))
-    print(td)
+    td = diego.find('a')
+    print(td.a.contents)
     
