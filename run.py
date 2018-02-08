@@ -3,7 +3,8 @@
 Github: https://github.com/batimusprime/happybirthday/
 Date: January 30, 2018
 Project: Happy Birthday: An app that finds baseball player's birthdays
-Last Modified: 2/2/2018 
+Last Modified: 2/7/2018
+File Purpose: Gather birthday information via web scrapping 
 
 '''
 #############TODO Section############################
@@ -15,6 +16,11 @@ Last Modified: 2/2/2018
 #TODO: Determine if current day is displayed as fallback or by intent
     # if user input = datetime.day - ok 
     # if user input != datetime.day && results = datetime.day - bad
+#TODO: Database integration
+#TODO: Better variable naming
+#TODO: Better handling of string conversion
+#TODO: Determine if this needs functions for eventual deployment or if it can be run as an executable file
+
 
 #############Begin import section####################
 
@@ -24,10 +30,9 @@ import urllib.request
 
 ############Set Variables###########################
 
-#month = input("Please enter your birthday month: ")
-#day = input("Please enter your birthday day: ")
 month = 1
 day = 31
+
 ############Begin URL Scrape########################
 
 #returns page HTML
@@ -43,12 +48,12 @@ linkData = soup.findAll("td", {"class": "left"})
 for link in linkData:
     
     #set variable to string
-    alsotoo = str(link.a)
+    linkstr = str(link.a)
     
     #use regex to return information between <a> tags. Searches for '>' and '<'
-    p = re.findall(r'(^.*>)(.*?)(<.*$)', alsotoo)
+    p = re.findall(r'(^.*>)(.*?)(<.*$)', linkstr)
     
     
     #iterate over list of objects returned by regex
-    for elemeno in p:
+    for element in p:
         print(p[0][1])
