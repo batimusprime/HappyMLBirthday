@@ -41,10 +41,12 @@ Automatically tweet MLB players on their birthday, store the replies, and analyz
 
 **TODO:** Sentiment analysis
 
+**TODO:** Implement golden sombrero congratulator
+
 ## Services Used / Version
 
 - Python 3.6.3 via Anaconda 4.4.8
 - MySQL 5.7.21 Community Version
 - PyMySQL 0.7.11
- - BeautifulSoup 4.6.0
-
+- BeautifulSoup 4.6.0
+- Stackedit.io - Markdown app

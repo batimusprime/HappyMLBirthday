@@ -32,7 +32,7 @@ import urllib.request
 
 month = 1
 day = 31
-
+array = []
 ############Begin URL Scrape########################
 
 #returns page HTML
@@ -56,4 +56,9 @@ for link in linkData:
     
     #iterate over list of objects returned by regex
     for element in p:
-        print(p[0][1])
+        #print(p[0][1])
+        m = (p[0][1])
+        #push to list / array
+        array.append(m)
+        
+print(array)
