@@ -3,7 +3,7 @@
 Github: https://github.com/batimusprime/happybirthday/
 Date: January 30, 2018
 Project: Happy Birthday: An app that finds baseball player's birthdays
-Last Modified: 2/7/2018
+Last Modified: 2/8/2018
 File Purpose: Gather birthday information via web scrapping 
 
 '''
