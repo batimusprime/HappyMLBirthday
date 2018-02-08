@@ -26,27 +26,27 @@ class DbOps():
  
         #Establish a cursor object
 
-         connCur = conn.cursor() 
+         curse = conn.cursor() 
          #success
          print("Initialized Database : " + db)
          
          #return cursor object
-         return connCur
+         return curse
          
-     def select(connCur):
+     def select(curse):
          #Create prepared statement for ease of use & security best practice 
          selectAll = 'SELECT * from usmc;' 
  
 #Execute prepared statement with execute() method 
-         countrow = connCur.execute(selectAll) 
+         #countrow = curse.execute(selectAll) 
  
          #print("row count", countrow) 
  
 #can use fetchmany, but must establish a loop 
-         data = connCur.fetchall() 
+         data = curse.fetchall() 
  
 #output the final data with simple loop 
-#TODO: Make this legible, using a template or (%s) 
+#TODO: Make this legible, using a template or ((%s),(string formatting)) 
          for rows in data: 
              for name in rows: 
                  print(name) 

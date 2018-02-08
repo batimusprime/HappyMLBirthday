@@ -1,11 +1,16 @@
-# -*- coding: utf-8 -*-
 """
-Created on Thu Feb  8 03:32:52 2018
+Github: https://github.com/batimusprime/happybirthday/ 
+Date: January 30, 2018 
+Project: Happy Birthday: An app that finds baseball player's birthdays 
+Last Modified: 2/8/2018 
+File Purpose: Main executable / program flow control 
+ 
+""" 
+#########IMPORTS############
 
-@author: 5P
-"""
-
+#TODO: Read more about this
 import db_ops
-
+#########MAIN PROCESSES####
+#Initialize connection to database as object 
 DbOps.initDb()
-DbOps.select(a)
+DbOps.select(curse)
