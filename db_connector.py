@@ -27,14 +27,14 @@ birthdate = '1983-01-01'
 ############BEGIN MAIN SECTION##### 
  
 #Call connect method and set database connection details 
-conn = pymysql.connect(host='127.0.0.1', user='root',password='toor', db='playerDB') 
+conn = pymysql.connect(host='127.0.0.1', user='root',password='toor', db='playerdb') 
  
 #Establish a cursor 
 #TODO: Learn about cursor() 
 a = conn.cursor() 
  
 #Create prepared statement for ease of use & security best practice 
-selectAll = 'SELECT * from players;' 
+selectAll = 'SELECT * from usmc;' 
  
 #Execute prepared statement with execute() method 
 countrow = a.execute(selectAll) 
@@ -56,7 +56,7 @@ for rows in data:
 ########INSERT INTO DB###### 
      
 #create sql statement to execute inserting values into statement     
-a.execute("INSERT INTO players (firstName, lastNAme, birthdate) VALUES (%s,%s,%s)", 
-              (firstName, lastName,birthdate)) 
+#a.execute("INSERT INTO players (firstName, lastNAme, birthdate) VALUES (%s,%s,%s)", 
+ #             (firstName, lastName,birthdate)) 
 #send command, like Git 
 conn.commit()

@@ -7,5 +7,5 @@ Created on Thu Feb  8 03:32:52 2018
 
 import db_ops
 
-
-db_ops.MyClass.init()
+DbOps.initDb()
+DbOps.select(a)

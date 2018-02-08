@@ -8,7 +8,7 @@ import pymysql
 
 ############Set Variables###########################
 
-month = 2
+month = 1
 day = 1
 array = []
 tableName = 'players_1_31'
