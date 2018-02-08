@@ -61,4 +61,4 @@ for link in linkData:
         #push to list / array
         array.append(m)
         
-print(array)
+print(array[0])
