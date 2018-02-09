@@ -4,7 +4,7 @@ Github: https://github.com/batimusprime/happybirthday/
 Date: January 30, 2018
 Project: Happy Birthday: An app that finds baseball player's birthdays
 Last Modified: 2/8/2018
-File Purpose: Gather birthday information via web scrapping 
+File Purpose: Gather birthday information via web scrapping
 
 '''
 #############TODO Section############################
@@ -14,7 +14,7 @@ File Purpose: Gather birthday information via web scrapping
 #TODO: Retrieve current day and month from datetime
 #TODO: Determine if data retrieved is the same as current day
 #TODO: Determine if current day is displayed as fallback or by intent
-    # if user input = datetime.day - ok 
+    # if user input = datetime.day - ok
     # if user input != datetime.day && results = datetime.day - bad
 #TODO: Database integration
 #TODO: Better variable naming
@@ -31,7 +31,7 @@ import urllib.request
 ############Set Variables###########################
 
 month = 1
-day = 31
+day = 1
 array = []
 ############Begin URL Scrape########################
 
@@ -46,19 +46,19 @@ linkData = soup.findAll("td", {"class": "left"})
 
 #iterate over object
 for link in linkData:
-    
+
     #set variable to string
     linkstr = str(link.a)
-    
+
     #use regex to return information between <a> tags. Searches for '>' and '<'
     p = re.findall(r'(^.*>)(.*?)(<.*$)', linkstr)
-    
-    
+
+
     #iterate over list of objects returned by regex
     for element in p:
         #print(p[0][1])
         m = (p[0][1])
         #push to list / array
         array.append(m)
-        
-print(array[0])
+
+print(array)
