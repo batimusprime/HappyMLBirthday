@@ -1,3 +1,9 @@
+#####################################################
+# Name: github.com/BatimusPrime
+# Date: 2/15/2018
+# Project: MLBirthday
+# Purpose: Scrape website, create table, populate table with info
+#####################################################
 
 #############Begin import section####################
 
@@ -84,4 +90,26 @@ def pushTable(month, day):
 
      #empty the list
      del array[:]
+
+#Retrieve data from the database
+def retrTable(month, day):
+
+     #TODO: Find a better way to share conn and cursor
+     #Create new connection
+     conn = pymysql.connect(host='127.0.0.1', user='root',password='toor', db='playerDB')
+
+     #Call cursor method
+     cursor = conn.cursor()
+
+     #TODO: Is it possible to create one large statement / does it matter for performance#
+     #Execute the query inserting each 'people' into the database
+     cursor.execute("SELECT * FROM players_%s_%s",(month,day))
+
+     data = cursor.fetchall()
+     for rows in data:
+          print(rows)
+     cursor.close()
+     conn.close()
+
+
 

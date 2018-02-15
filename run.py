@@ -1,3 +1,10 @@
+##########################################################
+# Name: Github.com/BatimusPrime
+# Date: 2/15/2018
+# Project: MLBirthday
+# Purpose: Control flow of functions in helpme.py
+##########################################################
+
 import helpme
 
 ##db stuff
