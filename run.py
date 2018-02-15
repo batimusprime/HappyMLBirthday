@@ -5,7 +5,7 @@
 # Purpose: Control flow of functions in helpme.py
 ##########################################################
 
-import helpme
+import main
 
 ##db stuff
 
@@ -22,12 +22,12 @@ for months in a:
 
           #For every day, get the info from the website
           print("gathering data from website:",months,"_",days )
-          helpme.getInfo(months, days)
+          main.getInfo(months, days)
 
           #Create a properly named table
           print("database created: players_",months,"_",days)
-          helpme.createTable(months, days)
+          main.createTable(months, days)
 
           #Push the information to the website, loop contained in pushTable method
           print("pushing information: players",months,"_",days)
-          helpme.pushTable(months, days)
+          main.pushTable(months, days)
