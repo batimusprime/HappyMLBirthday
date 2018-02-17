@@ -1,14 +1,16 @@
-
-
 import pymysql
+import datetime
+
 
 
 ############DEFINE VARIABLES#######
 
 playerArray = []
+now = datetime.datetime.now()
+month = str(now.month)
+day = str(now.day)
 
 ############BEGIN MAIN SECTION#####
-
 
 #Call connect method and set database connection details
 conn = pymysql.connect(host='127.0.0.1', user='root',password='toor', db='playerdb')
@@ -17,8 +19,7 @@ conn = pymysql.connect(host='127.0.0.1', user='root',password='toor', db='player
 a = conn.cursor()
 
 #Create prepared statement for ease of use & security best practice
-selectAll = 'SELECT playerName from players_2_15;'
-
+selectAll = ('SELECT playerName from players_' + month + '_' + day + ';')
 #Execute prepared statement with execute() method
 a.execute(selectAll)
 

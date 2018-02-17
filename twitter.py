@@ -8,7 +8,7 @@
 ###########Import Section###############
 import tweepy
 
-import keys
+import pri\keys
 
 #from time import sleep
 

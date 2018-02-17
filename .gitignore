@@ -2,3 +2,7 @@
 keys\.py
 
 __pycache__/
+
+bin/
+
+pri/
