@@ -1,6 +1,6 @@
 #########################################
 # https://github.com/batimusprime
-# Date: 2/16/18
+# Date: 2/27/18
 # Program: MLBirthday
 # Purpose: Basic Twitter Integration
 ########################################
@@ -8,7 +8,7 @@
 ###########Import Section###############
 import tweepy
 
-import pri\keys
+from pri.keys import Keys
 
 #from time import sleep
 
@@ -18,8 +18,8 @@ import pri\keys
 ###########Main Processing##############
 
 #Initiate tweepy and auth
-auth = tweepy.OAuthHandler(keys.pubkey, keys.prikey)
-auth.set_access_token(keys.pubToken, keys.priToken)
+auth = tweepy.OAuthHandler(Keys.pubKey, Keys.priKey)
+auth.set_access_token(Keys.pubToken, Keys.priToken)
 auth.secure = True
 api = tweepy.API(auth)
 
@@ -28,6 +28,7 @@ api = tweepy.API(auth)
 for tweet in tweepy.Cursor(api.search,q='trump').items(10):
      try:
           print("Found tweet by: " + tweet.user.screen_name)
+          print(tweet.text)
      except tweepy.TweepError as e:
           print(e.reason)
           sleep(10)
