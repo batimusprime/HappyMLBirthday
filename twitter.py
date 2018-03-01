@@ -23,12 +23,20 @@ auth.set_access_token(Keys.pubToken, Keys.priToken)
 auth.secure = True
 api = tweepy.API(auth)
 
-#print(str(api.get_user(screen_name = "ml_birthday")))
-
-for tweet in tweepy.Cursor(api.search,q='trump').items(10):
-     try:
-          print("Found tweet by: " + tweet.user.screen_name)
-          print(tweet.text)
-     except tweepy.TweepError as e:
-          print(e.reason)
-          sleep(10)
+me = api.get_user('ml_birthday')
+f = open('tweets.txt','w', encoding='utf-8')
+tweet = "My First Tweet! Stay Tuned For Some Fun"
+status = api.update_status(status=tweet)
+# for tweet in tweepy.Cursor(api.search,q='mlb').items(100):
+#      try:
+#           #print("Found tweet by: " + tweet.user.screen_name)
+#           #print(tweet.text)
+#           f.write(tweet.user.screen_name)
+#           f.write('\n')
+#           f.write(tweet.text)
+#           f.write('\n')
+#           f.write('************************')
+#           f.write('\n')
+#      except tweepy.TweepError as e:
+#           print(e.reason)
+#             sleep(10)
